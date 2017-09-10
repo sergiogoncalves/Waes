@@ -4,6 +4,7 @@ package com.wearewaes.service.difference;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.wearewaes.dataaccessobject.DifferenceRepository;
 import com.wearewaes.datatransferobject.DifferenceFinalResultDTO;
@@ -34,6 +35,7 @@ public class DefaultDifferenceService implements DifferenceService{
 		return findDifferenceChecked(differenceId);
 	}
 
+    @Transactional
 	public DifferenceDO create(DifferenceDO differenceDO) throws ConstraintsViolationException {
 
 		return null;
@@ -63,6 +65,7 @@ public class DefaultDifferenceService implements DifferenceService{
         return differenceDO;
     }
 
+    @Transactional
 	public DifferenceDO createLeftPerson(Long differenceId, PersonDO personDO) 
 	{
 		DifferenceDO differenceDO = findDifference(differenceId);
@@ -73,6 +76,7 @@ public class DefaultDifferenceService implements DifferenceService{
 		return differenceRepository.save(differenceDO);
 	}
 
+    @Transactional
 	public DifferenceDO createRightPerson(Long differenceId, PersonDO personDO) {
 		
 		DifferenceDO differenceDO = findDifference(differenceId);

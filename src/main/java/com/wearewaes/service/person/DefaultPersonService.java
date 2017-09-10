@@ -5,6 +5,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
 import com.wearewaes.util.Utils;
 
  
@@ -34,6 +36,7 @@ public class DefaultPersonService implements PersonService
 		return findPersonChecked(personId);
 	}
 
+	@Transactional
 	public PersonDO create(PersonDO personDO) throws ConstraintsViolationException {
 		PersonDO person;
        
