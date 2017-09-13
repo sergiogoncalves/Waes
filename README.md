@@ -1,4 +1,4 @@
-## WAES Server Applicant Test Service
+## WAES Server Applicant Test Service [![Build Status](https://travis-ci.org/sergiogoncalves/Waes.svg?branch=master)](https://travis-ci.org/sergiogoncalves/Waes)
 You can to start application by executing com.wearewaes.WaesApplication, which starts a webserver on port 8080 (http://localhost:8080) and serves SwaggerUI where can inspect and try existing endpoints.
 
 # The assignment
